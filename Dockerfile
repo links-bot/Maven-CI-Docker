@@ -12,4 +12,5 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 
 RUN go get -u github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cli/docker-credential-ecr-login
 
-RUN cat ~/.docker/config.json
+ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
+CMD ["mvn"]
